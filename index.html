@@ -104,14 +104,14 @@
 
     /* ✅ ESTILO DO POP-UP (MODAL) */
     #modal-checkout {
-      display: none; /* Escondido por padrão */
+      display: none;
       position: fixed;
       z-index: 9999;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.7); /* Fundo escuro */
+      background-color: rgba(0,0,0,0.7);
     }
 
     .modal-content {
@@ -192,7 +192,17 @@
 
   <h2 style="margin-top:35px;">Quem somos?</h2>
   <div class="about-box">
-    Começamos há mais de +20 anos atrás... (conteúdo omitido para brevidade)
+    Começamos há mais de +20 anos atrás, com um grupo de protetores que se instalou em um terreno do estado, para cuidar de animais abandonados e sem condições de sobrevivência nas ruas.
+    <br><br>
+    A partir disso, foi crescendo cada vez mais, pois o número de abandonados só se multiplicava. Nosso trabalho vai desde os cuidados do animal, que recebem tratamento no abrigo até ficarem saudáveis e castrados, para serem levados em nossas feirinhas de adoção, realizadas todos os sábados na praça. 
+    <br><br>
+    Juntamente a isso, existe nosso trabalho de conscientização para a população, sobre as leis contra maus tratos e abandono, a importância da posse responsável e da castração. Hoje estamos com quase 500 animais, entre eles cachorros e gatos. 
+    <br><br>
+    Nossa maior dificuldade, é que mesmo com toda essa quantidade de animais, não conseguimos manter funcionários pela falta de recursos, e temos poucos voluntários que dificilmente aparecem no abrigo para ajudar. 
+    <br><br>
+    Mesmo com a ajuda que a prefeitura nos repassa todo mês para a compra de ração, ainda falta uma enorme quantia para pagarmos medicação, veterinários, produtos de limpeza e estrutura. 
+    <br><br>
+    Por isso fazemos vários eventos, venda em geral de camisetas, panetones, cestas de chocolate e rifas ao longo do ano, para arrecadarmos mais recursos para conseguirmos continuar com nosso trabalho diário.
   </div>
 
   <footer>ONG Vidas Resgatadas – Obrigado por ajudar🐾</footer>
@@ -217,7 +227,7 @@
   }, 3000);
 
   // Script da Galeria
-  const galleryImages = ["images/LADOALADO-_1_.webp", "images/LADOALADO-_2_.webp", "images/LADOALADO-_3_.webp"];
+  const galleryImages = ["images/LADOALADO-_1_.webp", "images/LADOALADO-_2_.webp", "images/LADOALADO-_3_.webp", "images/LADOALADO-_4_.webp", "images/LADOALADO-_6_.webp"];
   let gIndex = 0;
   const gallery = document.getElementById("gallery-img");
   setInterval(() => {
@@ -226,24 +236,23 @@
     setTimeout(() => { gallery.src = galleryImages[gIndex]; gallery.style.opacity = 1; }, 300);
   }, 2500);
 
-  // ✅ FUNÇÕES DO POP-UP
+  // FUNÇÕES DO POP-UP
   function abrirCheckout(url) {
     const modal = document.getElementById("modal-checkout");
     const iframe = document.getElementById("checkout-iframe");
-    iframe.src = url; // Define a URL do checkout
-    modal.style.display = "block"; // Mostra o modal
-    document.body.style.overflow = "hidden"; // Trava o scroll da página ao fundo
+    iframe.src = url;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
   }
 
   function fecharCheckout() {
     const modal = document.getElementById("modal-checkout");
     const iframe = document.getElementById("checkout-iframe");
-    modal.style.display = "none"; // Esconde o modal
-    iframe.src = ""; // Limpa o iframe para não gastar recursos
-    document.body.style.overflow = "auto"; // Libera o scroll
+    modal.style.display = "none";
+    iframe.src = "";
+    document.body.style.overflow = "auto";
   }
 
-  // Fechar se clicar fora da caixa branca
   window.onclick = function(event) {
     const modal = document.getElementById("modal-checkout");
     if (event.target == modal) {
